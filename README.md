@@ -1,7 +1,7 @@
 # Homework_1
 My scene is a diorama of a young hero fighting monsters at sunset to protect a small village. I included several buildings, many types of vegetation, a few props and other terrain items to fully form the scene. Traditional JRPGs were the main inspiration. The mian character in this scene is the hero carrying the sword and shield fighting against the monsters.
 
-#List of Items
+# List of Items
 1. rock_1(found)
 2. flower_1(found)
 3. flower_2(found)
