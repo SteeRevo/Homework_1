@@ -23,6 +23,6 @@ My scene is a diorama of a young hero fighting monsters at sunset to protect a s
 19. building_4(found)
 
 # Types of Light
-Point, Directional, Spotlight, Emissive(on smoke particle)
-UI Light Switch
+Point, Directional, Spotlight, Emissive(on smoke particle),
+UI Light Switch,
 2D Texture Emitter
