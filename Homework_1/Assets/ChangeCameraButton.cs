@@ -7,9 +7,11 @@ public class ChangeCameraButton : MonoBehaviour
 {
     // create camera list that can be updated in the inspector
     public List<Camera> Cameras;
+    public Light directLight;
     // create frame and button variables 
     private VisualElement frame;
     private Button button;
+    private Button lightingButton;
     // This function is called when the object becomes enabled and active.
     void OnEnable()
     {
@@ -20,8 +22,10 @@ public class ChangeCameraButton : MonoBehaviour
         frame = rootVisualElement.Q<VisualElement>("Frame");
         // get the button, which is nested in the frame
         button = frame.Q<Button>("Button");
+        lightingButton = frame.Q<Button>("Button2");
         // create event listener that calls ChangeCamera() when pressed
         button.RegisterCallback<ClickEvent>(ev => ChangeCamera());
+        lightingButton.RegisterCallback<ClickEvent>(ev => ChangeLighting());
     }
     // initialize click count
     int click = 0;
@@ -41,6 +45,25 @@ public class ChangeCameraButton : MonoBehaviour
         // enable the selected camera
         Cameras[n].enabled = true;
         // Cameras[n].depth = 1;
+    }
+
+    int lightClick = 0;
+    private void ChangeLighting()
+    {
+        if(lightClick == 1){
+            directLight.intensity = 0.5f;
+        }
+        else if(lightClick == 2){
+            directLight.intensity = 0f;
+        }
+        else if (lightClick == 3){
+            directLight.intensity = 1f;
+        }
+        if(lightClick > 2){
+            lightClick = 0;
+        }
+        lightClick++;
+        Debug.Log(lightClick);
     }
 }  
     
